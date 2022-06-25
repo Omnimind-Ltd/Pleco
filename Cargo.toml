@@ -1,11 +1,13 @@
 [workspace]
 members = [
     "pleco",
-    "pleco_engine",]
+    "pleco_engine",
+    "pleco_interface",]
 
 default-members = [
     "pleco",
-    "pleco_engine",]
+    "pleco_engine",
+    "pleco_interface",]
 
 [profile.release]
 opt-level = 3
