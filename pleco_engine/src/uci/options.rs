@@ -26,7 +26,7 @@ impl OptionWork {
 
 /// A sorted map of options available
 pub struct OptionsMap {
-    pub map: Vec<Box<UCIOption>>,
+    pub map: Vec<Box<dyn UCIOption>>,
     pub work: VecDeque<OptionWork>
 }
 
@@ -70,7 +70,7 @@ impl OptionsMap {
         self.work.pop_front()
     }
 
-    fn clear_hash() -> Box<UCIOption> {
+    fn clear_hash() -> Box<dyn UCIOption> {
         let mutator: fn() -> Option<OptionWork> = || {
             Some(OptionWork::ClearTT)
         };
@@ -80,7 +80,7 @@ impl OptionsMap {
         })
     }
 
-    fn resize_hash() -> Box<UCIOption> {
+    fn resize_hash() -> Box<dyn UCIOption> {
         let mutator: fn(i32) -> Option<OptionWork> = |x: i32| {
             Some(OptionWork::ResizeTT(x as usize))
         };
@@ -93,7 +93,7 @@ impl OptionsMap {
         })
     }
 
-    fn threads() -> Box<UCIOption> {
+    fn threads() -> Box<dyn UCIOption> {
         let mutator: fn(i32) -> Option<OptionWork> = |x: i32| {
             Some(OptionWork::Threads(x as usize))
         };

@@ -7,7 +7,7 @@ pub mod capture_piece_history;
 pub mod butterfly;
 
 use std::ptr::NonNull;
-use std::alloc::{Layout, Global, handle_alloc_error, dealloc, alloc_zeroed};
+use std::alloc::{Layout, dealloc, alloc_zeroed};
 use std::mem;
 use std::ptr;
 use std::ops::*;

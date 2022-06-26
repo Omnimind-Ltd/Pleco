@@ -14,7 +14,7 @@ use threadpool::threadpool;
 
 use search::eval::Evaluation;
 
-use num_cpus;
+//use num_cpus;
 
 // --------- STATIC VARIABLES
 
@@ -39,7 +39,7 @@ impl PlecoSearcher {
     pub fn init(use_stdout: bool) -> Self {
         init_globals();
         USE_STDOUT.store(use_stdout,Ordering::Relaxed);
-     //   threadpool().set_thread_count(num_cpus::get().min(MAX_THREADS).max(1));
+        //threadpool().set_thread_count(num_cpus::get().min(MAX_THREADS).max(1));
         PlecoSearcher {
             options: OptionsMap::new(),
             search_mode: SearchType::None,

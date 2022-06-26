@@ -106,7 +106,7 @@ pub mod hint {
     #[inline(always)]
     pub fn unlikely(cond: bool) -> bool {
         #[cfg(feature = "nightly")]
-        unsafe {
+        {
             intrinsics::unlikely(cond)
         }
         #[cfg(not(feature = "nightly"))]
@@ -120,7 +120,7 @@ pub mod hint {
     #[inline(always)]
     pub fn likely(cond: bool) -> bool {
         #[cfg(feature = "nightly")]
-            unsafe {
+        {
             intrinsics::likely(cond)
         }
         #[cfg(not(feature = "nightly"))]

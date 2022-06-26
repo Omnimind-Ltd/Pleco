@@ -20,12 +20,12 @@ use {SQ,BitBoard,Player,PieceType,File,Rank,Piece};
 use core::score::{Score,Value};
 
 use std::sync::atomic::{AtomicBool,Ordering,fence,compiler_fence};
-use std::sync::{Once, ONCE_INIT};
+use std::sync::{Once};
 use std::mem;
 
 static INITIALIZED: AtomicBool = AtomicBool::new(false);
 
-static INIT: Once = ONCE_INIT;
+static INIT: Once = Once::new();
 
 /// Initializes the static structures. Guarantees to only allow being called once.
 #[cold]

@@ -1965,8 +1965,8 @@ impl Board {
                 let k_from: SQ = src;
                 let r_from: SQ = dst;
 
-                let k_to: SQ = self.turn.relative_square( { if r_from > k_from { SQ(6) } else { SQ(2) } });
-                let r_to: SQ = self.turn.relative_square( { if r_from > k_from { SQ(5) } else { SQ(3) } });
+                let k_to: SQ = self.turn.relative_square(  if r_from > k_from { SQ(6) } else { SQ(2) } );
+                let r_to: SQ = self.turn.relative_square(  if r_from > k_from { SQ(5) } else { SQ(3) } );
 
                 let opp_k_bb = opp_king_sq.to_bb();
                 (rook_moves(BitBoard(0), r_to) & opp_k_bb).is_not_empty()
