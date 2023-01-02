@@ -58,7 +58,7 @@ doctest = true
 
 [dependencies]
 pleco = { path = "../pleco", version = "0.5.0", features =["nightly"]}
-chrono = "0.4.19"
+chrono = "0.4.23"
 rand = "0.8.5"
 num_cpus = "1.13.1"
 prefetch = "0.2.0"
